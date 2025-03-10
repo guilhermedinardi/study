@@ -5,7 +5,8 @@
   "scripts": {
     "dev": "next dev --turbopack",
     "build": "next build",
-    "start": "next start"
+    "start": "next start",
+    "prepare": "husky install"
   },
   "dependencies": {
     "next": "15.2.1",
@@ -24,9 +25,15 @@
     "eslint-config-prettier": "^10.1.1",
     "eslint-plugin-react": "^7.37.4",
     "globals": "^16.0.0",
+    "husky": "^8.0.0",
+    "lint-staged": "^15.4.3",
     "prettier": "3.5.3",
     "tailwindcss": "^4",
     "typescript": "^5",
     "typescript-eslint": "^8.26.1"
+  },
+  "lint-staged": {
+    "*.js": "eslint --cache --fix",
+    "*.{js,css,md}": "prettier --write"
   }
 }
